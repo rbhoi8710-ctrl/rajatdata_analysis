@@ -3,26 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajat Kumar Bhoi | Data Analyst Portfolio</title>
+<title>HM&G Sales Analysis | Rajat Kumar Bhoi</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-background:#0f172a;
-color:white;
-}
+body{background:#0f172a;color:white;line-height:1.6;}
 
-/* HERO SECTION */
+section{padding:80px 10%;}
+
+h2{text-align:center;margin-bottom:40px;color:#38bdf8;}
+
 .hero{
 height:100vh;
 display:flex;
@@ -30,169 +24,122 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)),
-url('background.jpg');
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('background.jpg');
 background-size:cover;
 background-position:center;
-padding:20px;
 }
 
-.profile-pic{
-width:150px;
-height:150px;
-border-radius:50%;
-border:4px solid #38bdf8;
-margin-bottom:20px;
-object-fit:cover;
-}
-
-.hero h1{
-font-size:42px;
-font-weight:700;
-}
-
-.hero h3{
-color:#38bdf8;
-margin-top:10px;
-}
-
-.hero p{
-max-width:600px;
-margin-top:15px;
-font-size:16px;
-color:#ddd;
-}
-
-/* NAVBAR */
-nav{
-position:fixed;
-width:100%;
-background:#111827;
-padding:15px 10%;
-display:flex;
-justify-content:space-between;
-z-index:1000;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:500;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-/* SECTION */
-.section{
-padding:100px 10%;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:40px;
-color:#38bdf8;
-}
-
-/* CARDS */
-.card-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+.profile{
+width:140px;height:140px;border-radius:50%;
+border:4px solid #38bdf8;margin-bottom:20px;
 }
 
 .card{
 background:#1e293b;
 padding:25px;
-border-radius:15px;
-transition:0.3s;
+border-radius:12px;
+margin-bottom:25px;
 }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
-/* CONTACT */
-.contact{
-text-align:center;
-}
+footer{text-align:center;padding:20px;background:#111827;}
 
-.contact a{
+.btn{
 display:inline-block;
-margin:10px;
+margin-top:20px;
 padding:10px 20px;
 background:#38bdf8;
 color:black;
-border-radius:25px;
 text-decoration:none;
+border-radius:20px;
 font-weight:600;
-}
-
-.contact a:hover{
-background:white;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#111827;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<div><strong>Rajat</strong></div>
-<div>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
 <section class="hero">
-
-<img src="profile.png" class="profile-pic" alt="Rajat Kumar Bhoi">
-
+<img src="profile.png" class="profile">
 <h1>Rajat Kumar Bhoi</h1>
-<h3>Data Enthusiast | MS Excel Data Analyst</h3>
+<h3>Sales Data Analysis Project</h3>
+<p>HM&G Hindustan Motors & Gears, Rourkela – 769005</p>
+</section>
 
+<section>
+<h2>Project Objective</h2>
+<div class="card">
+<ul>
+<li>Analyze sales data using Excel</li>
+<li>Identify highest and lowest sales</li>
+<li>Compare monthly performance</li>
+<li>Support business decision making</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Tools Used</h2>
+<div class="grid">
+<div class="card">Microsoft Excel 2024</div>
+<div class="card">Pivot Tables</div>
+<div class="card">Pivot Charts</div>
+<div class="card">Sorting & Filtering</div>
+<div class="card">Dashboard Reporting</div>
+</div>
+</section>
+
+<section>
+<h2>Sales Dashboard Overview</h2>
+<div class="card">
+<p><strong>Grand Total Sales:</strong> ₹23,929,448</p>
+</div>
+</section>
+
+<section>
+<h2>City-wise Sales Analysis</h2>
+<canvas id="cityChart"></canvas>
+<p>Highest: Berhampur – ₹2,987,248 | Lowest: Puri – ₹1,923,174</p>
+</section>
+
+<section>
+<h2>Category-wise Sales Analysis</h2>
+<canvas id="categoryChart"></canvas>
+<p>Bike Accessories contribute 55% of total revenue.</p>
+</section>
+
+<section>
+<h2>Salesperson Performance</h2>
+<canvas id="repChart"></canvas>
+<p>Top Performer: Rajat – ₹4,291,620</p>
+</section>
+
+<section>
+<h2>Product-wise Sales</h2>
+<canvas id="productChart"></canvas>
+<p>Highest Product: Bike Cover – ₹3,531,413</p>
+</section>
+
+<section>
+<h2>Monthly Sales Trend</h2>
+<canvas id="monthChart"></canvas>
+<p>Highest Month: September – ₹3,185,336 | Lowest: December – ₹1,019,492</p>
+</section>
+
+<section>
+<h2>Conclusion</h2>
+<div class="card">
 <p>
-An enthusiastic data analyst who loves transforming raw data into meaningful business insights using Microsoft Excel, Pivot Tables, Dashboards and Data Visualization tools.
+Total sales reached ₹23,929,448. Berhampur is the strongest city. Bike Accessories dominate revenue.
+Rajat is the top-performing sales representative. September recorded peak sales while December showed seasonal decline.
+This analysis supports strategic business decision-making and growth planning.
 </p>
-
-</section>
-
-<section class="section" id="projects">
-<h2>My Projects</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>Sales Dashboard</h3>
-<p>Interactive Excel dashboard showing city-wise, category-wise and monthly sales performance.</p>
-<canvas id="chart1"></canvas>
 </div>
-
-<div class="card">
-<h3>Category Contribution</h3>
-<p>Bike Accessories vs Car Accessories revenue share analysis.</p>
-<canvas id="chart2"></canvas>
-</div>
-
-</div>
-</section>
-
-<section class="section contact" id="contact">
-<h2>Contact Me</h2>
-
-<a href="mailto:rbhoi8710@gmail.com">Email</a>
-<a href="https://www.linkedin.com/in/rajat-kumar-bhoi-4a7855247" target="_blank">LinkedIn</a>
-<a href="tel:+919348811492">Call</a>
-
 </section>
 
 <footer>
@@ -200,30 +147,45 @@ An enthusiastic data analyst who loves transforming raw data into meaningful bus
 </footer>
 
 <script>
-
-new Chart(document.getElementById("chart1"), {
-type: "bar",
-data: {
+new Chart(document.getElementById("cityChart"), {
+type:"bar",
+data:{
 labels:["Berhampur","Jharsuguda","Puri"],
-datasets:[{
-label:"City Sales",
-data:[2987248,2500603,1923174],
-backgroundColor:"#38bdf8"
-}]
+datasets:[{label:"Sales",data:[2987248,2500603,1923174],backgroundColor:"#38bdf8"}]
 }
 });
 
-new Chart(document.getElementById("chart2"), {
-type: "pie",
-data: {
+new Chart(document.getElementById("categoryChart"), {
+type:"pie",
+data:{
 labels:["Bike Accessories","Car Accessories"],
-datasets:[{
-data:[13273021,10656427],
-backgroundColor:["#38bdf8","#1e3a8a"]
-}]
+datasets:[{data:[13273021,10656427],backgroundColor:["#38bdf8","#1e3a8a"]}]
 }
 });
 
+new Chart(document.getElementById("repChart"), {
+type:"bar",
+data:{
+labels:["Rajat","Tigga","Sahil"],
+datasets:[{label:"Sales",data:[4291620,3494426,1496231],backgroundColor:"#38bdf8"}]
+}
+});
+
+new Chart(document.getElementById("productChart"), {
+type:"bar",
+data:{
+labels:["Bike Cover","Helmet","Car Perfume"],
+datasets:[{label:"Sales",data:[3531413,3525721,2383811],backgroundColor:"#38bdf8"}]
+}
+});
+
+new Chart(document.getElementById("monthChart"), {
+type:"line",
+data:{
+labels:["July","September","December"],
+datasets:[{label:"Sales",data:[2190804,3185336,1019492],borderColor:"#38bdf8",tension:0.4}]
+}
+});
 </script>
 
 </body>
