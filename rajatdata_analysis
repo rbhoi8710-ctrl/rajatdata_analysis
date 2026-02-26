@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajat Kumar Bhoi | Data Analyst</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+nav {
+    background: #111827;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(to right, #2563eb, #1e40af);
+}
+
+section {
+    padding: 50px 10%;
+}
+
+.card {
+    background: #1e293b;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #60a5fa;
+}
+
+canvas {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#charts">Dashboard</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<header>
+<h1>Rajat Kumar Bhoi</h1>
+<p>Data Analyst | Excel | Pivot Tables | Dashboard Reporting</p>
+</header>
+
+<section id="about">
+<h2>Project Overview</h2>
+<div class="card">
+<p><strong>Company:</strong> HM&G Hindustan Motors & Gears, Rourkela</p>
+<p><strong>Grand Total Sales:</strong> ₹23,929,448</p>
+<p>This project analyzes city-wise, category-wise, product-wise,
+salesperson, and monthly performance using Excel dashboards.</p>
+</div>
+</section>
+
+<section id="charts">
+<h2>Interactive Sales Dashboard</h2>
+
+<div class="card">
+<canvas id="cityChart"></canvas>
+</div>
+
+<div class="card">
+<canvas id="categoryChart"></canvas>
+</div>
+
+<div class="card">
+<canvas id="monthChart"></canvas>
+</div>
+
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: rbhoi8710@gmail.com</p>
+<p>Phone: +91 9348811492</p>
+<p>
+<a href="https://www.linkedin.com/in/rajat-kumar-bhoi-4a7855247" target="_blank" style="color:#60a5fa;">
+LinkedIn Profile
+</a>
+</p>
+</div>
+</section>
+
+<script>
+
+// City Chart
+new Chart(document.getElementById("cityChart"), {
+    type: 'bar',
+    data: {
+        labels: ["Berhampur", "Jharsuguda", "Puri"],
+        datasets: [{
+            label: "Sales by City",
+            data: [2987248, 2500603, 1923174],
+            backgroundColor: "#2563eb"
+        }]
+    }
+});
+
+// Category Chart
+new Chart(document.getElementById("categoryChart"), {
+    type: 'pie',
+    data: {
+        labels: ["Bike Accessories", "Car Accessories"],
+        datasets: [{
+            data: [13273021, 10656427],
+            backgroundColor: ["#2563eb", "#1e40af"]
+        }]
+    }
+});
+
+// Monthly Chart
+new Chart(document.getElementById("monthChart"), {
+    type: 'bar',
+    data: {
+        labels: ["July", "September", "December"],
+        datasets: [{
+            label: "Monthly Sales",
+            data: [2190804, 3185336, 1019492],
+            backgroundColor: "#60a5fa"
+        }]
+    }
+});
+
+</script>
+
+</body>
+</html>
