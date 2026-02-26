@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajat Kumar Bhoi | Data Analyst</title>
+<title>Rajat Kumar Bhoi | Data Analyst Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -18,29 +18,18 @@ scroll-behavior:smooth;
 }
 
 body{
+background:#0f172a;
 color:white;
-background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
-background-size:400% 400%;
-animation:gradientBG 10s ease infinite;
-}
-
-@keyframes gradientBG{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
 }
 
 /* NAVBAR */
 nav{
 position:fixed;
-top:0;
 width:100%;
+background:#111827;
 padding:15px 10%;
 display:flex;
 justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
 z-index:1000;
 }
 
@@ -49,11 +38,10 @@ color:white;
 text-decoration:none;
 margin-left:20px;
 font-weight:500;
-transition:0.3s;
 }
 
 nav a:hover{
-color:#00e6ff;
+color:#38bdf8;
 }
 
 /* HERO */
@@ -64,18 +52,18 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:0 20px;
+padding:20px;
+background:linear-gradient(to right,#1e3a8a,#2563eb);
 }
 
 .hero h1{
-font-size:50px;
+font-size:48px;
 font-weight:700;
 }
 
 .hero p{
 margin-top:15px;
 font-size:20px;
-color:#ddd;
 }
 
 /* SECTION */
@@ -86,50 +74,45 @@ padding:100px 10%;
 .section h2{
 text-align:center;
 margin-bottom:50px;
-font-size:36px;
+font-size:32px;
+color:#38bdf8;
 }
 
-/* GLASS CARDS */
+/* CARDS */
 .card-container{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
 .card{
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(12px);
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-transition:0.4s;
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* SKILL BARS */
+/* SKILLS */
 .skill{
 margin-bottom:20px;
 }
 
 .skill-bar{
-background:#333;
+background:#334155;
+height:10px;
 border-radius:20px;
 overflow:hidden;
 }
 
 .skill-fill{
-height:12px;
-background:#00e6ff;
-width:0;
-animation:fill 2s forwards;
-}
-
-@keyframes fill{
-to{width:90%;}
+height:10px;
+background:#38bdf8;
+width:90%;
 }
 
 /* CONTACT */
@@ -139,14 +122,13 @@ text-align:center;
 
 .contact a{
 display:inline-block;
-margin:10px 15px;
-padding:12px 25px;
-background:#00e6ff;
+margin:10px;
+padding:10px 20px;
+background:#38bdf8;
 color:black;
-border-radius:30px;
+border-radius:25px;
 text-decoration:none;
 font-weight:600;
-transition:0.3s;
 }
 
 .contact a:hover{
@@ -156,8 +138,8 @@ background:white;
 /* FOOTER */
 footer{
 text-align:center;
-padding:30px;
-background:rgba(0,0,0,0.6);
+padding:20px;
+background:#111827;
 }
 </style>
 </head>
@@ -176,13 +158,13 @@ background:rgba(0,0,0,0.6);
 
 <section class="hero">
 <h1>Rajat Kumar Bhoi</h1>
-<p>Data Analyst | Excel Dashboard Expert | Data Visualization Specialist</p>
+<p>Data Analyst | Excel Dashboard Specialist | Business Insights Expert</p>
 </section>
 
 <section class="section" id="about">
 <h2>About Me</h2>
 <div class="card">
-<p>I specialize in transforming raw data into meaningful business insights using Excel dashboards, Pivot Tables, and data visualization tools. My goal is to help businesses make smart, data-driven decisions.</p>
+<p>I specialize in transforming raw data into meaningful business insights using Excel dashboards, Pivot Tables, and visual reporting. My project for HM&G Hindustan Motors & Gears demonstrates city-wise, category-wise, product-wise, and monthly performance analysis.</p>
 </div>
 </section>
 
@@ -191,60 +173,99 @@ background:rgba(0,0,0,0.6);
 
 <div class="skill">
 <p>Microsoft Excel</p>
-<div class="skill-bar">
-<div class="skill-fill"></div>
-</div>
+<div class="skill-bar"><div class="skill-fill"></div></div>
 </div>
 
 <div class="skill">
 <p>Data Visualization</p>
-<div class="skill-bar">
-<div class="skill-fill"></div>
-</div>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
 </div>
 
 <div class="skill">
 <p>Business Analysis</p>
-<div class="skill-bar">
-<div class="skill-fill"></div>
-</div>
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
 </div>
 
 </section>
 
 <section class="section" id="projects">
-<h2>Dashboard Preview</h2>
-<canvas id="salesChart"></canvas>
+<h2>Projects</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Sales Dashboard</h3>
+<p>Grand Total Sales: ₹23,929,448</p>
+<canvas id="chart1"></canvas>
+</div>
+
+<div class="card">
+<h3>Category Analysis</h3>
+<p>Bike Accessories dominate with 55% revenue contribution.</p>
+<canvas id="chart2"></canvas>
+</div>
+
+<div class="card">
+<h3>Monthly Sales Trend</h3>
+<p>September highest, December lowest.</p>
+<canvas id="chart3"></canvas>
+</div>
+
+</div>
+
 </section>
 
 <section class="section contact" id="contact">
 <h2>Contact Me</h2>
 
-<a href="mailto:rbhoi8710@gmail.com">Email Me</a>
+<a href="mailto:rbhoi8710@gmail.com">Email</a>
 <a href="https://www.linkedin.com/in/rajat-kumar-bhoi-4a7855247" target="_blank">LinkedIn</a>
-<a href="tel:+919348811492">Call Me</a>
+<a href="tel:+919348811492">Call</a>
 
 </section>
 
 <footer>
-<p>© 2026 Rajat Kumar Bhoi | All Rights Reserved</p>
+© 2026 Rajat Kumar Bhoi | Data Analyst Portfolio
 </footer>
 
 <script>
-const ctx = document.getElementById('salesChart');
 
-new Chart(ctx, {
-type: 'line',
+new Chart(document.getElementById("chart1"), {
+type: "bar",
 data: {
-labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul'],
-datasets: [{
-label: 'Monthly Sales',
-data: [2300000, 2500000, 2100000, 2600000, 2800000, 2400000, 3000000],
-borderColor: '#00e6ff',
-tension: 0.4
+labels:["Berhampur","Jharsuguda","Puri"],
+datasets:[{
+label:"City Sales",
+data:[2987248,2500603,1923174],
+backgroundColor:"#38bdf8"
 }]
 }
 });
+
+new Chart(document.getElementById("chart2"), {
+type: "pie",
+data: {
+labels:["Bike Accessories","Car Accessories"],
+datasets:[{
+data:[13273021,10656427],
+backgroundColor:["#38bdf8","#1e3a8a"]
+}]
+}
+});
+
+new Chart(document.getElementById("chart3"), {
+type: "line",
+data: {
+labels:["July","September","December"],
+datasets:[{
+label:"Monthly Sales",
+data:[2190804,3185336,1019492],
+borderColor:"#38bdf8",
+tension:0.4
+}]
+}
+});
+
 </script>
 
 </body>
