@@ -1,156 +1,128 @@
 <!DOCTYPE html>
-<index.html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rajat Kumar Bhoi | Data Analyst</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0f172a;
-    color: white;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-nav {
-    background: #111827;
-    padding: 15px;
-    text-align: center;
+body{
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+scroll-behavior:smooth;
 }
 
-nav a {
-    color: white;
-    margin: 0 20px;
-    text-decoration: none;
-    font-weight: bold;
+header{
+text-align:center;
+padding:80px 20px;
 }
 
-header {
-    text-align: center;
-    padding: 70px 20px;
-    background: linear-gradient(to right, #2563eb, #1e40af);
+header h1{
+font-size:48px;
+font-weight:700;
 }
 
-section {
-    padding: 50px 10%;
+header p{
+margin-top:10px;
+font-size:18px;
+color:#ccc;
 }
 
-.card {
-    background: #1e293b;
-    padding: 25px;
-    margin: 30px 0;
-    border-radius: 10px;
+.section{
+padding:60px 10%;
 }
 
-h2 {
-    color: #60a5fa;
+.section h2{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
 }
 
-canvas {
-    background: white;
-    border-radius: 10px;
-    padding: 10px;
+.card-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:rgba(0,0,0,0.4);
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<a href="#about">About</a>
-<a href="#charts">Dashboard</a>
-<a href="#contact">Contact</a>
-</nav>
-
 <header>
 <h1>Rajat Kumar Bhoi</h1>
-<p>Data Analyst | Excel | Pivot Tables | Dashboard Reporting</p>
+<p>Data Analyst | Excel Dashboard Specialist | Data Visualization</p>
 </header>
 
-<section id="about">
-<h2>Project Overview</h2>
+<section class="section">
+<h2>Skills</h2>
+<div class="card-container">
 <div class="card">
-<p><strong>Company:</strong> HM&G Hindustan Motors & Gears, Rourkela</p>
-<p><strong>Grand Total Sales:</strong> ₹23,929,448</p>
-<p>This project analyzes city-wise, category-wise, product-wise,
-salesperson, and monthly performance using Excel dashboards.</p>
+<h3>Microsoft Excel</h3>
+<p>Advanced Pivot Tables, Dashboard & Data Cleaning</p>
+</div>
+
+<div class="card">
+<h3>Data Visualization</h3>
+<p>Interactive charts using Chart.js</p>
+</div>
+
+<div class="card">
+<h3>Business Insights</h3>
+<p>Monthly Sales Analysis & Reports</p>
+</div>
 </div>
 </section>
 
-<section id="charts">
-<h2>Interactive Sales Dashboard</h2>
-
-<div class="card">
-<canvas id="cityChart"></canvas>
-</div>
-
-<div class="card">
-<canvas id="categoryChart"></canvas>
-</div>
-
-<div class="card">
-<canvas id="monthChart"></canvas>
-</div>
-
+<section class="section">
+<h2>Sales Dashboard Preview</h2>
+<canvas id="myChart"></canvas>
 </section>
 
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-<p>Email: rbhoi8710@gmail.com</p>
-<p>Phone: +91 9348811492</p>
-<p>
-<a href="https://www.linkedin.com/in/rajat-kumar-bhoi-4a7855247" target="_blank" style="color:#60a5fa;">
-LinkedIn Profile
-</a>
-</p>
-</div>
-</section>
+<footer>
+<p>© 2026 Rajat Kumar Bhoi | All Rights Reserved</p>
+</footer>
 
 <script>
+const ctx = document.getElementById('myChart');
 
-// City Chart
-new Chart(document.getElementById("cityChart"), {
-    type: 'bar',
-    data: {
-        labels: ["Berhampur", "Jharsuguda", "Puri"],
-        datasets: [{
-            label: "Sales by City",
-            data: [2987248, 2500603, 1923174],
-            backgroundColor: "#2563eb"
-        }]
-    }
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+datasets: [{
+label: 'Sales',
+data: [2300000, 2500000, 2100000, 2600000, 2800000, 2400000],
+borderWidth: 1
+}]
+}
 });
-
-// Category Chart
-new Chart(document.getElementById("categoryChart"), {
-    type: 'pie',
-    data: {
-        labels: ["Bike Accessories", "Car Accessories"],
-        datasets: [{
-            data: [13273021, 10656427],
-            backgroundColor: ["#2563eb", "#1e40af"]
-        }]
-    }
-});
-
-// Monthly Chart
-new Chart(document.getElementById("monthChart"), {
-    type: 'bar',
-    data: {
-        labels: ["July", "September", "December"],
-        datasets: [{
-            label: "Monthly Sales",
-            data: [2190804, 3185336, 1019492],
-            backgroundColor: "#60a5fa"
-        }]
-    }
-});
-
 </script>
 
 </body>
