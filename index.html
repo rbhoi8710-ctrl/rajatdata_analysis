@@ -22,6 +22,47 @@ background:#0f172a;
 color:white;
 }
 
+/* HERO SECTION */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)),
+url('background.jpg');
+background-size:cover;
+background-position:center;
+padding:20px;
+}
+
+.profile-pic{
+width:150px;
+height:150px;
+border-radius:50%;
+border:4px solid #38bdf8;
+margin-bottom:20px;
+object-fit:cover;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:700;
+}
+
+.hero h3{
+color:#38bdf8;
+margin-top:10px;
+}
+
+.hero p{
+max-width:600px;
+margin-top:15px;
+font-size:16px;
+color:#ddd;
+}
+
 /* NAVBAR */
 nav{
 position:fixed;
@@ -44,28 +85,6 @@ nav a:hover{
 color:#38bdf8;
 }
 
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:linear-gradient(to right,#1e3a8a,#2563eb);
-}
-
-.hero h1{
-font-size:48px;
-font-weight:700;
-}
-
-.hero p{
-margin-top:15px;
-font-size:20px;
-}
-
 /* SECTION */
 .section{
 padding:100px 10%;
@@ -73,8 +92,7 @@ padding:100px 10%;
 
 .section h2{
 text-align:center;
-margin-bottom:50px;
-font-size:32px;
+margin-bottom:40px;
 color:#38bdf8;
 }
 
@@ -97,24 +115,6 @@ transform:translateY(-8px);
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* SKILLS */
-.skill{
-margin-bottom:20px;
-}
-
-.skill-bar{
-background:#334155;
-height:10px;
-border-radius:20px;
-overflow:hidden;
-}
-
-.skill-fill{
-height:10px;
-background:#38bdf8;
-width:90%;
-}
-
 /* CONTACT */
 .contact{
 text-align:center;
@@ -135,7 +135,6 @@ font-weight:600;
 background:white;
 }
 
-/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
@@ -149,70 +148,42 @@ background:#111827;
 <nav>
 <div><strong>Rajat</strong></div>
 <div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <section class="hero">
+
+<img src="profile.png" class="profile-pic" alt="Rajat Kumar Bhoi">
+
 <h1>Rajat Kumar Bhoi</h1>
-<p>Data Analyst | Excel Dashboard Specialist | Business Insights Expert</p>
-</section>
+<h3>Data Enthusiast | MS Excel Data Analyst</h3>
 
-<section class="section" id="about">
-<h2>About Me</h2>
-<div class="card">
-<p>I specialize in transforming raw data into meaningful business insights using Excel dashboards, Pivot Tables, and visual reporting. My project for HM&G Hindustan Motors & Gears demonstrates city-wise, category-wise, product-wise, and monthly performance analysis.</p>
-</div>
-</section>
-
-<section class="section" id="skills">
-<h2>Skills</h2>
-
-<div class="skill">
-<p>Microsoft Excel</p>
-<div class="skill-bar"><div class="skill-fill"></div></div>
-</div>
-
-<div class="skill">
-<p>Data Visualization</p>
-<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-</div>
-
-<div class="skill">
-<p>Business Analysis</p>
-<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-</div>
+<p>
+An enthusiastic data analyst who loves transforming raw data into meaningful business insights using Microsoft Excel, Pivot Tables, Dashboards and Data Visualization tools.
+</p>
 
 </section>
 
 <section class="section" id="projects">
-<h2>Projects</h2>
+<h2>My Projects</h2>
 
 <div class="card-container">
 
 <div class="card">
 <h3>Sales Dashboard</h3>
-<p>Grand Total Sales: ₹23,929,448</p>
+<p>Interactive Excel dashboard showing city-wise, category-wise and monthly sales performance.</p>
 <canvas id="chart1"></canvas>
 </div>
 
 <div class="card">
-<h3>Category Analysis</h3>
-<p>Bike Accessories dominate with 55% revenue contribution.</p>
+<h3>Category Contribution</h3>
+<p>Bike Accessories vs Car Accessories revenue share analysis.</p>
 <canvas id="chart2"></canvas>
 </div>
 
-<div class="card">
-<h3>Monthly Sales Trend</h3>
-<p>September highest, December lowest.</p>
-<canvas id="chart3"></canvas>
 </div>
-
-</div>
-
 </section>
 
 <section class="section contact" id="contact">
@@ -249,19 +220,6 @@ labels:["Bike Accessories","Car Accessories"],
 datasets:[{
 data:[13273021,10656427],
 backgroundColor:["#38bdf8","#1e3a8a"]
-}]
-}
-});
-
-new Chart(document.getElementById("chart3"), {
-type: "line",
-data: {
-labels:["July","September","December"],
-datasets:[{
-label:"Monthly Sales",
-data:[2190804,3185336,1019492],
-borderColor:"#38bdf8",
-tension:0.4
 }]
 }
 });
